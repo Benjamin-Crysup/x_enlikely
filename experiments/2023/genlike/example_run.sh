@@ -1,0 +1,10 @@
+builds/bin_x64_linux/experiments/2023/exp_genlike sampload --flat-error --error 0.1 --flat-efficiency --efficiency 0.9 --load 10 --allele 4 --ploidies 2/2 --maxreact 1000000 --cycles 20 --seed 1234 --fan 32 --gpu 0 --chunk 1048576 --out builds/bin_x64_linux/experiments/2023/testoute.load
+builds/bin_x64_linux/experiments/2023/exp_genlike sampload --flat-error --error 0.1 --flat-efficiency --efficiency 0.9 --load 10 --allele 4 --ploidies 2/2 --maxreact 1000000 --cycles 0 --seed 1234 --fan 32 --gpu 0 --chunk 1048576 --out builds/bin_x64_linux/experiments/2023/testoutb.load
+builds/bin_x64_linux/experiments/2023/exp_genlike sampload --flat-error --error 0.1 --flat-efficiency --efficiency 0.9 --load 10 --allele 4 --ploidies 2/2 --maxreact 1000000 --cycles 20 --seed 5678 --fan 32 --gpu 0 --chunk 1048576 --out builds/bin_x64_linux/experiments/2023/testoutd.load
+
+builds/bin_x64_linux/experiments/2023/exp_genlike drawread --flat-error --error 0.1 --rcb 10 --gpu 0 --chunk 65536 --drawL builds/bin_x64_linux/experiments/2023/testoutd.load --compL builds/bin_x64_linux/experiments/2023/testoute.load --out builds/bin_x64_linux/experiments/2023/testoutp.pros --mapout builds/bin_x64_linux/experiments/2023/testoutp.glmap
+builds/bin_x64_linux/experiments/2023/exp_genlike drawread --flat-error --error 0.1 --rcb 10 --gpu 0 --chunk 65536 --drawL builds/bin_x64_linux/experiments/2023/testoutd.load --compL builds/bin_x64_linux/experiments/2023/testoutb.load --out builds/bin_x64_linux/experiments/2023/testoutb.pros --mapout builds/bin_x64_linux/experiments/2023/testoutb.glmap
+
+builds/bin_x64_linux/experiments/2023/exp_genlike prototsv --in builds/bin_x64_linux/experiments/2023/testoutp.pros --map builds/bin_x64_linux/experiments/2023/testoutp.glmap --out builds/bin_x64_linux/experiments/2023/testoutp.tsv.gz
+builds/bin_x64_linux/experiments/2023/exp_genlike prototsv --in builds/bin_x64_linux/experiments/2023/testoutb.pros --map builds/bin_x64_linux/experiments/2023/testoutb.glmap --out builds/bin_x64_linux/experiments/2023/testoutb.tsv.gz
+
